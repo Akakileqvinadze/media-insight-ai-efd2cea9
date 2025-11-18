@@ -110,7 +110,7 @@ const Contact = () => {
                     </Button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6 border-2 border-border rounded-2xl p-8">
                   <div className="space-y-2">
                     <Label htmlFor="name" className="text-sm font-medium">
                       {t("contact.name")}{" "}
