@@ -23,8 +23,8 @@ const Map = () => {
     if (!mapContainer.current || map.current) return;
 
     // Initialize map - Kutaisi coordinates (7PC3+P4F)
-    // lat: 42.2667, lng: 42.7167
-    map.current = L.map(mapContainer.current).setView([42.2667, 42.7167], 13);
+    // 42°16'18.8"N 42°42'09.8"E
+    map.current = L.map(mapContainer.current).setView([42.271883, 42.702710], 13);
 
     // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -33,7 +33,7 @@ const Map = () => {
     }).addTo(map.current);
 
     // Add marker at Kutaisi location
-    L.marker([42.2667, 42.7167])
+    L.marker([42.271883, 42.702710])
       .addTo(map.current)
       .bindPopup('<div style="padding: 4px;"><strong>Kutaisi</strong><br/>7PC3+P4F</div>')
       .openPopup();
