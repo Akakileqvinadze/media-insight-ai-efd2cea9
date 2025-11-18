@@ -9,6 +9,7 @@ import { Footer } from "@/components/Footer";
 import { Mail, MapPin, Phone, Send, Facebook, Linkedin, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
+import Map from "@/components/Map";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -109,7 +110,7 @@ const Contact = () => {
                     </Button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6 border-2 border-border rounded-2xl p-8">
                   <div className="space-y-2">
                     <Label htmlFor="name" className="text-sm font-medium">
                       {t("contact.name")}{" "}
@@ -122,7 +123,7 @@ const Contact = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="h-12"
+                      className="h-12 border-b-2 border-t-0 border-x-0 rounded-none border-border/70 focus:border-primary"
                     />
                   </div>
 
@@ -140,7 +141,7 @@ const Contact = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, phone: e.target.value })
                       }
-                      className="h-12"
+                      className="h-12 border-b-2 border-t-0 border-x-0 rounded-none border-border/70 focus:border-primary"
                     />
                   </div>
 
@@ -156,7 +157,7 @@ const Contact = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, company: e.target.value })
                       }
-                      className="h-12"
+                      className="h-12 border-b-2 border-t-0 border-x-0 rounded-none border-border/70 focus:border-primary"
                     />
                   </div>
 
@@ -170,7 +171,7 @@ const Contact = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, message: e.target.value })
                       }
-                      className="min-h-32 resize-none"
+                      className="min-h-32 resize-none border-b-2 border-t-0 border-x-0 rounded-none border-border/70 focus:border-primary"
                     />
                   </div>
 
@@ -267,16 +268,8 @@ const Contact = () => {
                 </div>
 
                 {/* Map - Full Width Below */}
-                <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2975.8847484476884!2d42.69936431551983!3d42.26822997919048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x405c8b0e0e0e0e0d%3A0x0!2s4%20St.%20Nino%20Street%2C%20Kutaisi!5e0!3m2!1sen!2sge!4v1234567890"
-                    width="100%"
-                    height="300"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
+                <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm p-4">
+                  <Map />
                 </div>
               </div>
             </div>

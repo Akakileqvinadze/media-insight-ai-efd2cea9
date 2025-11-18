@@ -199,6 +199,7 @@ const translations = {
     "demo.subtitle": "შეავსეთ ფორმა და დაგიკავშირდებით მალევე.",
     "demo.secure":
       "თქვენი ინფორმაცია დაცულია და გამოყენებული იქნება მხოლოდ თქვენთან დასაკავშირებლად.",
+    "demo.back": "უკან დაბრუნება",
     "contact.phone": "ტელეფონი",
     "contact.company": "კომპანია",
     "contact.phonePlaceholder": "+995 5XX XX XX XX",
