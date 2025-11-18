@@ -85,6 +85,8 @@ const translations = {
     "contact.social": "Social Medias", // Updated for consistency
     "contact.emailInfo": "Email", // New key for contact info card
     "contact.phoneInfo": "Phone", // New key for contact info card
+    "contact.thanksMessage":
+      "Thank you for reaching out. We'll get back to you as soon as possible",
     "contact.sending": "Sending...",
 
     // Footer
@@ -180,6 +182,7 @@ const translations = {
     "contact.name": "სახელი",
     "contact.emailInfo": "ელ-ფოსტა",
     "contact.message": "შეტყობინება",
+    "contact.thanksMessage": "შეავსეთ ფორმა და ჩვენ დაგიკავშირდებით მალევე!",
     "contact.send": "გაგზავნა",
     "contact.info": "საკონტაქტო ინფორმაცია",
 

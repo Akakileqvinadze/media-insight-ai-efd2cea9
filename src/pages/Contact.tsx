@@ -6,16 +6,39 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { Mail, MapPin, Phone, Send, Facebook, Linkedin, CheckCircle2 } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Send,
+  Facebook,
+  Linkedin,
+  CheckCircle2,
+} from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 import Map from "@/components/Map";
 
 const contactSchema = z.object({
-  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
-  phone: z.string().trim().min(1, "Phone is required").max(50, "Phone must be less than 50 characters"),
-  company: z.string().trim().max(100, "Company name must be less than 100 characters"),
-  message: z.string().trim().min(1, "Message is required").max(1000, "Message must be less than 1000 characters"),
+  name: z
+    .string()
+    .trim()
+    .min(1, "Name is required")
+    .max(100, "Name must be less than 100 characters"),
+  phone: z
+    .string()
+    .trim()
+    .min(1, "Phone is required")
+    .max(50, "Phone must be less than 50 characters"),
+  company: z
+    .string()
+    .trim()
+    .max(100, "Company name must be less than 100 characters"),
+  message: z
+    .string()
+    .trim()
+    .min(1, "Message is required")
+    .max(1000, "Message must be less than 1000 characters"),
 });
 
 const Contact = () => {
@@ -31,7 +54,7 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validate input
     const validation = contactSchema.safeParse(formData);
     if (!validation.success) {
@@ -100,7 +123,8 @@ const Contact = () => {
                     </div>
                     <h2 className="text-2xl font-bold mb-3">Message Sent!</h2>
                     <p className="text-muted-foreground mb-8">
-                      Thank you for reaching out. We'll get back to you as soon as possible.
+                      Thank you for reaching out. We'll get back to you as soon
+                      as possible.
                     </p>
                     <Button
                       onClick={() => setSubmitted(false)}
@@ -110,80 +134,88 @@ const Contact = () => {
                     </Button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6 border-2 border-border rounded-2xl p-8">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-sm font-medium">
-                      {t("contact.name")}{" "}
-                      <span className="text-destructive">*</span>
-                    </Label>
-                    <Input
-                      id="name"
-                      required
-                      value={formData.name}
-                      onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
-                      }
-                      className="h-12 border-2"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-sm font-medium">
-                      {t("contact.phone")}{" "}
-                      <span className="text-destructive">*</span>
-                    </Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      required
-                      placeholder="+995 5XX XX XX XX"
-                      value={formData.phone}
-                      onChange={(e) =>
-                        setFormData({ ...formData, phone: e.target.value })
-                      }
-                      className="h-12 border-2"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="company" className="text-sm font-medium">
-                      {t("contact.company")}{" "}
-                      <span className="text-destructive">*</span>
-                    </Label>
-                    <Input
-                      id="company"
-                      required
-                      value={formData.company}
-                      onChange={(e) =>
-                        setFormData({ ...formData, company: e.target.value })
-                      }
-                      className="h-12 border-2"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message" className="text-sm font-medium">
-                      {t("contact.message")}
-                    </Label>
-                    <Textarea
-                      id="message"
-                      value={formData.message}
-                      onChange={(e) =>
-                        setFormData({ ...formData, message: e.target.value })
-                      }
-                      className="min-h-32 resize-none border-b-2 border-t-0 border-x-0 rounded-none border-border/70 focus:border-primary"
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full gradient-primary h-12 text-base font-semibold"
+                  <form
+                    onSubmit={handleSubmit}
+                    className="space-y-6 border-2 border-border rounded-2xl p-10 pb-18"
                   >
-                    <Send className="mr-2 h-4 w-4" />
-                    {loading ? "Sending..." : "Send"}
-                  </Button>
-                </form>
+                    <div className="space-y-2">
+                      <Label htmlFor="name" className="text-sm font-medium">
+                        {t("contact.name")}{" "}
+                        <span className="text-destructive">*</span>
+                      </Label>
+                      <Input
+                        id="name"
+                        required
+                        value={formData.name}
+                        onChange={(e) =>
+                          setFormData({ ...formData, name: e.target.value })
+                        }
+                        className="h-12 border-2"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="phone" className="text-sm font-medium">
+                        {t("contact.phone")}{" "}
+                        <span className="text-destructive">*</span>
+                      </Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        required
+                        placeholder="+995 5XX XX XX XX"
+                        value={formData.phone}
+                        onChange={(e) =>
+                          setFormData({ ...formData, phone: e.target.value })
+                        }
+                        className="h-12 border-2"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="company" className="text-sm font-medium">
+                        {t("contact.company")}{" "}
+                        <span className="text-destructive">*</span>
+                      </Label>
+                      <Input
+                        id="company"
+                        required
+                        value={formData.company}
+                        onChange={(e) =>
+                          setFormData({ ...formData, company: e.target.value })
+                        }
+                        className="h-12 border-2"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="message" className="text-sm font-medium">
+                        {t("contact.message")}
+                      </Label>
+
+                      <Textarea
+                        id="message"
+                        value={formData.message}
+                        onChange={(e) =>
+                          setFormData({ ...formData, message: e.target.value })
+                        }
+                        className="min-h-48 resize-none border-2 rounded-xl border-border focus:border-primary"
+                      />
+
+                      <p className="text-muted-foreground mb-8">
+                        {t("contact.thanksMessage")}{" "}
+                      </p>
+                    </div>
+
+                    <Button
+                      type="submit"
+                      disabled={loading}
+                      className="w-full gradient-primary h-12 text-base font-semibold"
+                    >
+                      <Send className="mr-2 h-4 w-4" />
+                      {loading ? "Sending..." : "Send"}
+                    </Button>
+                  </form>
                 )}
               </div>
 
