@@ -110,7 +110,7 @@ const Contact = () => {
                     </Button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6 border-2 border-border rounded-2xl p-8">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
                     <Label htmlFor="name" className="text-sm font-medium">
                       {t("contact.name")}{" "}
@@ -123,7 +123,7 @@ const Contact = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="h-12 border-b-2 border-t-0 border-x-0 rounded-none border-border/70 focus:border-primary"
+                      className="h-12 border-2"
                     />
                   </div>
 
@@ -141,7 +141,7 @@ const Contact = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, phone: e.target.value })
                       }
-                      className="h-12 border-b-2 border-t-0 border-x-0 rounded-none border-border/70 focus:border-primary"
+                      className="h-12 border-2"
                     />
                   </div>
 
@@ -157,7 +157,7 @@ const Contact = () => {
                       onChange={(e) =>
                         setFormData({ ...formData, company: e.target.value })
                       }
-                      className="h-12 border-b-2 border-t-0 border-x-0 rounded-none border-border/70 focus:border-primary"
+                      className="h-12 border-2"
                     />
                   </div>
 
