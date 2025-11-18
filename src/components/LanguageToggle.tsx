@@ -12,7 +12,7 @@ export const LanguageToggle = () => {
         onClick={() => setLanguage('en')}
         className="rounded-full px-3 py-1 h-8 text-xs font-medium"
       >
-        🇬🇧 EN
+        EN
       </Button>
       <Button
         variant={language === 'ka' ? 'default' : 'ghost'}
@@ -20,7 +20,7 @@ export const LanguageToggle = () => {
         onClick={() => setLanguage('ka')}
         className="rounded-full px-3 py-1 h-8 text-xs font-medium"
       >
-        🇬🇪 GE
+        GE
       </Button>
     </div>
   );
