@@ -6,13 +6,16 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
-    host: "::",
-    port: 8080,
+    host: "::",   // ღია ყველა ქსელის მისამართზე
+    port: 8080,   // პორტი 8080
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [
+    react(),                              // React SWC plugin
+    mode === "development" && componentTagger()  // განვითარების რეჟიმში componentTagger
+  ].filter(Boolean),
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "./src"), // მოკლე გზა src-ის ფოლდერში
     },
   },
 }));
